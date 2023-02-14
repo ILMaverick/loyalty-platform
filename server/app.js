@@ -11,8 +11,9 @@ app.listen(port, () => {
 })
 
 // database
-var sqlite3 = require('sqlite3');
-var db = new sqlite3.Database('database.db');
+db = require("./database");
+db.create_tables();
+db.dummy_data();
 
 // routes
 const users = require("./routes/usersRoute");
